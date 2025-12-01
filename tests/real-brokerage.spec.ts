@@ -35,7 +35,7 @@ test.describe('Real Brokerage', () => {
       await createAccount.validatePageNewAccountHeading();
     });
 
-    await page.waitForEvent('load');
+    // await page.waitForEvent('load');
 
     await test.step('Create new account -> Validate user gets logged in', async () => {
       const password: string = 'JohnDoe0987@';
