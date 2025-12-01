@@ -6,46 +6,46 @@ import { UserHome } from '@components/user-home-page';
 
 // Declare the types of your fixtures.
 type MyFixtures = {
-    login: Login;
-    createAccount: CreateAccount;
-    firewall: Firewall;
-    userHome: UserHome;
+  login: Login;
+  createAccount: CreateAccount;
+  firewall: Firewall;
+  userHome: UserHome;
 };
 
 // Extend base test by providing "todoPage" and "settingsPage".
 // This new "test" can be used in multiple test files, and each of them will get the fixtures.
 export const test = base.extend<MyFixtures>({
-    login: async ({ page }, use) => {
-        // Set up the fixture.
-        const login = new Login(page);
+  login: async ({ page }, use) => {
+    // Set up the fixture.
+    const login = new Login(page);
 
-        // Use the fixture value in the test.
-        await use(login);
-    },
+    // Use the fixture value in the test.
+    await use(login);
+  },
 
-    createAccount: async ({ page }, use) => {
-        // Set up the fixture.
-        const createAccount = new CreateAccount(page);
+  createAccount: async ({ page }, use) => {
+    // Set up the fixture.
+    const createAccount = new CreateAccount(page);
 
-        // Use the fixture value in the test.
-        await use(createAccount);
-    },
+    // Use the fixture value in the test.
+    await use(createAccount);
+  },
 
-    firewall: async ({ page }, use) => {
-        // Set up the fixture.
-        const firewall = new Firewall(page);
+  firewall: async ({ page }, use) => {
+    // Set up the fixture.
+    const firewall = new Firewall(page);
 
-        // Use the fixture value in the test.
-        await use(firewall);
-    },
+    // Use the fixture value in the test.
+    await use(firewall);
+  },
 
-    userHome: async ({ page }, use) => {
-        // Set up the fixture.
-        const userHome = new UserHome(page);
+  userHome: async ({ page }, use) => {
+    // Set up the fixture.
+    const userHome = new UserHome(page);
 
-        // Use the fixture value in the test.
-        await use(userHome);
-    },
+    // Use the fixture value in the test.
+    await use(userHome);
+  },
 });
 
 export { expect } from '@playwright/test';

@@ -25,11 +25,18 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [['html'], ['list'], ['@estruyf/github-actions-reporter', <GitHubActionOptions>{
-    title: 'UI Test Report',
-    useDetails: false,
-    showError: true
-  }]],
+  reporter: [
+    ['html'],
+    ['list'],
+    [
+      '@estruyf/github-actions-reporter',
+      <GitHubActionOptions>{
+        title: 'UI Test Report',
+        useDetails: false,
+        showError: true,
+      },
+    ],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -47,7 +54,7 @@ export default defineConfig({
         ...devices['Desktop Chrome'],
         navigationTimeout: 45_000,
         viewport: { width: 1600, height: 1000 },
-        trace: !process.env.CI ? 'on' : 'off'
+        trace: !process.env.CI ? 'on' : 'off',
       },
     },
 
