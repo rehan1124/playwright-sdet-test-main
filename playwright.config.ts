@@ -54,7 +54,7 @@ export default defineConfig({
         ...devices['Desktop Chrome'],
         navigationTimeout: 45_000,
         viewport: { width: 1600, height: 1000 },
-        trace: !process.env.CI ? 'on' : 'off',
+        trace: 'retain-on-failure',
       },
     },
 
